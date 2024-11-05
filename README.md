@@ -1,66 +1,43 @@
-## Foundry
+# Smart Contracts using Solidity
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Description
 
-Foundry consists of:
+This project is a beginner to intermediate journey into smart contracts using Solidity, developed within the Foundry framework for efficient smart contract development and testing. The contracts included in this repository are designed to demonstrate fundamental concepts of blockchain programming and decentralized applications.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Contracts
 
-## Documentation
+The following contracts are included in this project:
 
-https://book.getfoundry.sh/
+- **FundMe.sol**: A contract for collecting and managing funds from multiple users.
+- **PriceConverter.sol**: A utility contract for converting Ethereum prices.
 
-## Usage
+## FundMe.sol Contract
 
-### Build
+### Overview
 
-```shell
-$ forge build
-```
+The `FundMe` contract utilizes a decentralized oracle network to retrieve real-time Ethereum price data. This data is crucial for functions that enable users to send ETH to the contract and allow the contract owner to withdraw funds.
 
-### Test
+### File Structure
 
-```shell
-$ forge test
-```
+- Contracts are located in the `/src` directory.
+- Tests (unit, integration, forked, and staged) are organized within the `/test` directory.
 
-### Format
+### Results of `forge coverage`
 
-```shell
-$ forge fmt
-```
+Ran 1 test suite in 144.47ms (141.94ms CPU time): 10 tests passed, 0 failed, 0 skipped (10 total tests)
+| File | % Lines | % Statements | % Branches | % Funcs |
+|:--------------------------------|----------------|----------------|---------------|----------------:|
+| script/DeployFundMe.s.sol | 100.00% (6/6) | 100.00% (9/9) | 100.00% (0/0) | 100.00% (1/1) |
+| script/HelperConfig.s.sol | 66.67% (8/12) | 69.23% (9/13) | 33.33% (1/3) | 66.67% (2/3) |
+| script/Interactions.s.sol | 0.00% (0/12) | 0.00% (0/14) | 100.00% (0/0) | 0.00% (0/4) |
+| src/FundMe.sol | 95.83% (23/24) | 96.88% (31/32) | 71.43% (5/7) | 90.00% (9/10) |
+| src/PriceConverter.sol | 100.00% (5/5) | 100.00% (8/8) | 100.00% (0/0) | 100.00% (2/2) |
+| test/mocks/MockV3Aggregator.sol | 52.94% (9/17) | 52.94% (9/17) | 100.00% (0/0) | 50.00% (3/6) |
+| Total | 67.11% (51/76) | 70.97% (66/93) | 60.00% (6/10) | 65.38% (17/26) |
 
-### Gas Snapshots
+## Conclusion
 
-```shell
-$ forge snapshot
-```
+This project serves as a practical introduction to Solidity and smart contract development using Foundry. It highlights the importance of testing and code coverage in ensuring robust and secure smart contracts.
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Remember, DO NOT LEAVE YOUR PRIVATE KEY IN PLAIN TEXT!!!!!
+DO NOT SHARE YOUR PRIVATE KEY!!!!!
