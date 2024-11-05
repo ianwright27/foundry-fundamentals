@@ -15,7 +15,7 @@ The following contracts are included in this project:
 
 ### Overview
 
-The `FundMe` contract utilizes a decentralized oracle network to retrieve real-time Ethereum price data. This data is crucial for functions that enable users to send ETH to the contract and allow the contract owner to withdraw funds.
+The `FundMe` is a crowd sourcing application, a contract that utilizes a decentralized oracle network to retrieve real-time Ethereum price data that is crucial for functions that enable users to send ETH to the contract and allowing the contract owner to withdraw those funds.
 
 ### File Structure
 
